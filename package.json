@@ -5,12 +5,38 @@
   "type": "module",
   "license": "MIT",
   "author": "Nabil Freeman",
-  "repository": { "type": "git", "url": "https://github.com/nabilfreeman/opencode-total-spend.git" },
-  "exports": { "./tui": "./dist/tui.js" },
-  "files": ["dist", "LICENSE"],
-  "engines": { "opencode": ">=1.18.34 <2" },
-  "scripts": { "build": "node scripts/build.mjs", "test": "node --test test/*.test.js" },
-  "devDependencies": { "@babel/core": "^7.28.0", "babel-preset-solid": "^1.9.9" },
-  "peerDependencies": { "solid-js": "^1.9.0", "@opentui/solid": "*" },
-  "peerDependenciesMeta": { "solid-js": {"optional": true}, "@opentui/solid": {"optional": true} }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabilfreeman/opencode-total-spend.git"
+  },
+  "exports": {
+    "./tui": "./dist/tui.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "engines": {
+    "opencode": ">=1.18.34 <2"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "babel-preset-solid": "^1.9.9"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.9.0",
+    "@opentui/solid": "*"
+  },
+  "peerDependenciesMeta": {
+    "solid-js": {
+      "optional": true
+    },
+    "@opentui/solid": {
+      "optional": true
+    }
+  }
 }

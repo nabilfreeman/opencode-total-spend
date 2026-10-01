@@ -17,18 +17,26 @@ That's it. The original price is this agent's spend. **Σ** includes this sessio
 For **OpenCode 1.18.34 or newer in the 1.x series**:
 
 ```sh
-git clone https://github.com/nabilfreeman/opencode-total-spend.git
+opencode plugin --global opencode-total-spend
 ```
 
-Add the absolute path to the included, prebuilt plugin to `~/.config/opencode/tui.json` (keep any existing plugins):
+Restart OpenCode. No build step is needed. OpenCode 2 uses a different plugin API and isn't supported by this release.
+
+Alternatively, add the package to `~/.config/opencode/tui.json` (keep any existing plugins):
 
 ```json
 {
-  "plugin": ["/absolute/path/to/opencode-total-spend/dist/tui.js"]
+  "plugin": ["opencode-total-spend"]
 }
 ```
 
-Restart OpenCode. No build or npm install is needed. OpenCode 2 uses a different plugin API and isn't supported by this release.
+### Install from source
+
+```sh
+git clone https://github.com/nabilfreeman/opencode-total-spend.git
+```
+
+Add the absolute path to the included, prebuilt `dist/tui.js` to the `plugin` array in `~/.config/opencode/tui.json`. No build or npm install is needed.
 
 ## How it works
 
@@ -49,5 +57,9 @@ npm test
 ```
 
 The built JavaScript is committed so a clone is ready to use. Runtime UI dependencies are supplied by OpenCode.
+
+## Releases
+
+Pushes and merges to `main` automatically bump the patch version, build the plugin, publish it to npm, and create a GitHub release. The workflow uses npm trusted publishing (OIDC), following the release setup in `freeman-check` and the push-to-main flow in `autobelay/cli`. No npm token secret is needed.
 
 MIT licensed. Context layout and token calculation adapted from [OpenCode](https://github.com/anomalyco/opencode).
