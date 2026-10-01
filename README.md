@@ -1,5 +1,7 @@
 # OpenCode Total Spend
 
+[![npm version](https://img.shields.io/npm/v/opencode-total-spend)](https://www.npmjs.com/package/opencode-total-spend)
+
 Calculates the total spend for your session, including all subagents, and puts it on one extra line underneath OpenCode's existing price.
 
 ```text
@@ -20,7 +22,7 @@ For **OpenCode 1.18.34 or newer in the 1.x series**:
 opencode plugin --global opencode-total-spend
 ```
 
-Restart OpenCode. No build step is needed. OpenCode 2 uses a different plugin API and isn't supported by this release.
+Restart OpenCode. The command installs [the npm package](https://www.npmjs.com/package/opencode-total-spend) and adds it to your global TUI configuration. No cloning or build step is needed. OpenCode 2 uses a different plugin API and isn't supported by this release.
 
 Alternatively, add the package to `~/.config/opencode/tui.json` (keep any existing plugins):
 
@@ -29,6 +31,8 @@ Alternatively, add the package to `~/.config/opencode/tui.json` (keep any existi
   "plugin": ["opencode-total-spend"]
 }
 ```
+
+If you previously installed from a clone, remove the local `dist/tui.js` entry from `tui.json` when switching to the npm package, so it is only loaded once.
 
 ### Install from source
 
@@ -60,6 +64,6 @@ The built JavaScript is committed so a clone is ready to use. Runtime UI depende
 
 ## Releases
 
-Pushes and merges to `main` automatically bump the patch version, build the plugin, publish it to npm, and create a GitHub release. The workflow uses npm trusted publishing (OIDC), following the release setup in `freeman-check` and the push-to-main flow in `autobelay/cli`. No npm token secret is needed.
+Pushes and merges to `main` automatically bump the patch version, build the plugin, publish it to npm, and create a GitHub release. The [release workflow](.github/workflows/release.yml) uses npm trusted publishing (OIDC) with provenance. No manual version bump, tag, npm token secret, or sign-in is needed for these releases.
 
 MIT licensed. Context layout and token calculation adapted from [OpenCode](https://github.com/anomalyco/opencode).
