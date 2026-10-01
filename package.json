@@ -1,6 +1,6 @@
 {
   "name": "opencode-total-spend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "One extra sidebar line showing total session spend, including all subagents.",
   "type": "module",
   "license": "MIT",
