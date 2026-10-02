@@ -4,13 +4,7 @@
 
 Calculates the total spend for your session, including all subagents, and puts it on one extra line underneath OpenCode's existing price.
 
-```text
-Context
-125,661 tokens
-13% used
-$32.72 spent
-Σ $281.55
-```
+![OpenCode sidebar showing $83.75 agent spend and Σ $191.62 total spend including subagents](https://raw.githubusercontent.com/nabilfreeman/opencode-total-spend/main/assets/sidebar.png)
 
 That's it. The original price is this agent's spend. **Σ** includes this session and every nested subagent, at any depth. It updates as they work and includes earlier spend when you reopen a session.
 
